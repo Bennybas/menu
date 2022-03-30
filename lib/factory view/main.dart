@@ -38,8 +38,9 @@ class FactoryView extends StatelessWidget {
                           'Today',
                           textAlign: TextAlign.start,
                           style: TextStyle(
-                              fontSize: 20, fontWeight: FontWeight.bold),
-                        )
+                              fontSize: 22, fontWeight: FontWeight.bold),
+                        ),
+                        Text('34434')
                       ],
                     ),
                   ),
@@ -61,8 +62,9 @@ class FactoryView extends StatelessWidget {
                           'Yesterday',
                           textAlign: TextAlign.start,
                           style: TextStyle(
-                              fontSize: 20, fontWeight: FontWeight.bold),
-                        )
+                              fontSize: 22, fontWeight: FontWeight.bold),
+                        ),
+                        Text('34434'),
                       ],
                     ),
                   ),
@@ -86,7 +88,8 @@ class FactoryView extends StatelessWidget {
                           textAlign: TextAlign.start,
                           style: TextStyle(
                               fontSize: 20, fontWeight: FontWeight.bold),
-                        )
+                        ),
+                        Text('34434'),
                       ],
                     ),
                   ),
@@ -110,7 +113,8 @@ class FactoryView extends StatelessWidget {
                           textAlign: TextAlign.start,
                           style: TextStyle(
                               fontSize: 20, fontWeight: FontWeight.bold),
-                        )
+                        ),
+                        Text('34434'),
                       ],
                     ),
                   ),

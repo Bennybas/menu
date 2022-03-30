@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ems/helper/keyboard.dart';
-import 'package:ems/screens/login_success/login_success_screen.dart';
-
+import 'package:ems/screens/home/components/grid.dart';
 import '../../../components/default_button.dart';
 import '../../../constants.dart';
 import '../../../size_config.dart';
@@ -17,19 +16,19 @@ class _SignFormState extends State<SignForm> {
   var passwordController = TextEditingController();
 
   final _formKey = GlobalKey<FormState>();
-  String? email;
-  String? password;
-  bool? remember = false;
-  final List<String?> errors = [];
+  String email;
+  String password;
+  bool remember = false;
+  final List<String> errors = [];
 
-  void addError({String? error}) {
+  void addError({String error}) {
     if (!errors.contains(error))
       setState(() {
         errors.add(error);
       });
   }
 
-  void removeError({String? error}) {
+  void removeError({String error}) {
     if (errors.contains(error))
       setState(() {
         errors.remove(error);
@@ -63,8 +62,8 @@ class _SignFormState extends State<SignForm> {
       obscureText: true,
       controller: passwordController,
       decoration: InputDecoration(
-        labelText: "Password",
-        hintText: "Enter your password",
+        labelText: 'password',
+        hintText: "Type your password",
         floatingLabelBehavior: FloatingLabelBehavior.always,
       ),
     );
@@ -74,8 +73,8 @@ class _SignFormState extends State<SignForm> {
     return TextFormField(
       controller: usernameController,
       decoration: InputDecoration(
-        labelText: "Username",
-        hintText: "Enter your username",
+        labelText: 'username',
+        hintText: "Type your username",
         floatingLabelBehavior: FloatingLabelBehavior.always,
       ),
     );
@@ -92,7 +91,7 @@ class _SignFormState extends State<SignForm> {
           }));
       if (usernameController.text == 'admin' &&
           passwordController.text == '123') {
-        Navigator.pushNamed(context, LoginSuccessScreen.routeName);
+        Navigator.pushNamed(context, Grid.routeName);
       } else {
         ScaffoldMessenger.of(context).showSnackBar(
             SnackBar(content: Text('username or password incorrect')));

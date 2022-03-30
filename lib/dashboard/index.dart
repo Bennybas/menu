@@ -37,11 +37,10 @@ class _IndexPageState extends State<IndexPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color(0xFFFFCCBC),
+        backgroundColor: Color(0xFF303030),
         title: Text(
           'AusPower',
-          textAlign: TextAlign.center,
-          style: TextStyle(fontSize: 22, fontWeight: FontWeight.w600),
+          style: TextStyle(color: Colors.white),
         ),
       ),
       body: getBody(),

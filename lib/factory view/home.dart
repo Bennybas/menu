@@ -5,13 +5,13 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 class HomePage extends StatefulWidget {
   final Widget child;
 
-  HomePage({required Key key, required this.child}) : super(key: key);
+  HomePage({Key key, this.child}) : super(key: key);
 
   _HomePageState createState() => _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {
-  late List<charts.Series<Energy, String>> _seriesData;
+  List<charts.Series<Energy, String>> _seriesData;
 
   _generateData() {
     var data1 = [
@@ -115,9 +115,7 @@ class _HomePageState extends State<HomePage> {
                     animate: true,
                     barGroupingType: charts.BarGroupingType.grouped,
                     animationDuration: Duration(seconds: 4),
-                    defaultRenderer: new charts.BarRendererConfig(
-                      maxBarWidthPx: 100,
-                    ),
+                    defaultRenderer: new charts.BarRendererConfig(),
                   ),
                 ),
               ],

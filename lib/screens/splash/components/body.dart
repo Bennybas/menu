@@ -13,7 +13,7 @@ class Body extends StatefulWidget {
 class _BodyState extends State<Body> {
   int currentPage = 0;
   List<Map<String, String>> splashData = [
-    {"text": "Welcome to AusPower", "image": "assets/images/splash_1.png"},
+    {"text": "", "image": "assets/images/splash_1.png"},
   ];
   @override
   Widget build(BuildContext context) {
@@ -30,7 +30,6 @@ class _BodyState extends State<Body> {
                     currentPage = value;
                   });
                 },
-                itemCount: splashData.length,
                 itemBuilder: (context, index) => SplashContent(
                   image: splashData[index]["image"],
                   text: splashData[index]['text'],
@@ -47,19 +46,17 @@ class _BodyState extends State<Body> {
                     Spacer(),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
-                      children: List.generate(
-                        splashData.length,
-                        (index) => buildDot(index: index),
-                      ),
                     ),
                     Spacer(flex: 3),
                     DefaultButton(
-                      text: "Continue",
+                      text: "Continue to Login",
                       press: () {
                         Navigator.pushNamed(context, SignInScreen.routeName);
                       },
                     ),
-                    Spacer(),
+                    Spacer(
+                      flex: 7,
+                    ),
                   ],
                 ),
               ),
@@ -70,7 +67,7 @@ class _BodyState extends State<Body> {
     );
   }
 
-  AnimatedContainer buildDot({int? index}) {
+  AnimatedContainer buildDot({int index}) {
     return AnimatedContainer(
       duration: kAnimationDuration,
       margin: EdgeInsets.only(right: 5),

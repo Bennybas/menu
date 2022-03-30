@@ -5,11 +5,11 @@ import '../../../size_config.dart';
 
 class SplashContent extends StatelessWidget {
   const SplashContent({
-    Key? key,
+    Key key,
     this.text,
     this.image,
   }) : super(key: key);
-  final String? text, image;
+  final String text, image;
 
   @override
   Widget build(BuildContext context) {
@@ -19,20 +19,16 @@ class SplashContent extends StatelessWidget {
         Text(
           "AusPower",
           style: TextStyle(
-            fontSize: getProportionateScreenWidth(36),
+            fontSize: getProportionateScreenWidth(40),
             color: kPrimaryColor,
             fontWeight: FontWeight.bold,
           ),
         ),
-        Text(
-          text!,
-          textAlign: TextAlign.center,
-        ),
         Spacer(flex: 2),
         Image.asset(
-          image!,
-          height: getProportionateScreenHeight(265),
-          width: getProportionateScreenWidth(235),
+          image,
+          height: getProportionateScreenHeight(275),
+          width: getProportionateScreenWidth(265),
         ),
       ],
     );
